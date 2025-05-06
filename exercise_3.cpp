@@ -13,6 +13,8 @@ namespace Pan {
                 auto &o = orders.back();
                 if (qty < o.qty)
                 {
+                std::cout << "heyy" << std::endl;
+
                     _trade_info_for_order[o.id].total_qty += qty;
                     _trade_info_for_order[id].total_qty += qty;
                     _trade_info_for_order[o.id].total_weighted_price += (qty*curr_bid_price);
@@ -24,6 +26,8 @@ namespace Pan {
                 }
                 if (qty == o.qty)
                 {
+                std::cout << "heyy" << std::endl;
+
                     _trade_info_for_order[o.id].total_qty += o.qty;
                     _trade_info_for_order[id].total_qty += o.qty;
                     _trade_info_for_order[o.id].total_weighted_price += (o.qty*curr_bid_price);
@@ -34,6 +38,8 @@ namespace Pan {
                     break;
                 }
                 // qty > o.qty
+                std::cout << "heyy" << std::endl;
+
                 _trade_info_for_order[o.id].total_qty += o.qty;
                 _trade_info_for_order[id].total_qty += o.qty;
                 _trade_info_for_order[o.id].total_weighted_price += (o.qty*curr_bid_price);
@@ -70,6 +76,8 @@ namespace Pan {
                 auto &o = orders.back();
                 if (qty < o.qty)
                 {
+                std::cout << "heyy" << std::endl;
+
                     _trade_info_for_order[o.id].total_qty += qty;
                     _trade_info_for_order[id].total_qty += qty;
                     _trade_info_for_order[o.id].total_weighted_price += (qty*curr_ask_price);
@@ -81,6 +89,8 @@ namespace Pan {
                 }
                 if (qty == o.qty)
                 {
+                std::cout << "heyy" << std::endl;
+
                     _trade_info_for_order[o.id].total_qty += o.qty;
                     _trade_info_for_order[id].total_qty += o.qty;
                     _trade_info_for_order[o.id].total_weighted_price += (o.qty*curr_ask_price);
@@ -91,6 +101,7 @@ namespace Pan {
                     break;
                 }
                 // qty > o.qty
+                std::cout << "heyy" << std::endl;
                 _trade_info_for_order[o.id].total_qty += o.qty;
                 _trade_info_for_order[id].total_qty += o.qty;
                 _trade_info_for_order[o.id].total_weighted_price += (o.qty*curr_ask_price);
