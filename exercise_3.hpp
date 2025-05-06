@@ -66,7 +66,7 @@ public:
     // int price: order's price
     // Return:
     // int: order Id
-    int inputOrder(Side side, int volume, Price price);
+    int inputOrder(Side side, Qty qty, Price price);
     
     // QueryOrderTrade queries order's trade volume and average price.
     // Parameters:

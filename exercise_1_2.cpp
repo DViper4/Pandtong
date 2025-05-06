@@ -6,20 +6,41 @@
 
 namespace Pan
 {
+    // _____________Code exercise 1_____________
+    // fibo recursion:
     unsigned int fibo(unsigned int x) {
         if (x == 0)
-            throw;
-
+        throw;
+        
         if (x == 1)
-            return 1;
+        return 1;
         if (x == 2)
-            return 1;
+        return 1;
         if (x == 3)
-            return 2;
-
+        return 2;
+        
         return fibo(x-1) + fibo(x-2); 
     }
+    
+    // fibo template:
+    template <int n>
+    struct Fibonacci {
+        static const int value = Fibonacci<n - 1>::value + Fibonacci<n - 2>::value;
+    };
+    
+    template <>
+    struct Fibonacci<0> {
+        static const int value = 0;
+    };
+    
+    template <>
+    struct Fibonacci<1> {
+        static const int value = 1;
+    };
 
+
+    // _____________Code exercise 2_____________
+    // Code exercise 2 – Calculate daily prices
     void daily_prices(std::vector<double> prices) {
         double min = std::numeric_limits<double>::max(), max = 0, sum = 0, median;
 
@@ -51,7 +72,7 @@ namespace Pan
 
 
 
-    // ---------------------------------------------------
+    // Code exercise 2 – Dynamic ticks
     double calculateTickPrice(double price) {
         double tick_size;
         if (price < 0.01)
@@ -77,13 +98,9 @@ namespace Pan
 
     double calculateFinalPrice(Side side, double price, int ticks)
     {
-
-        // std::cout <<  "price = " << price << std::endl;
         auto tick_size = calculateTickPrice(price);
 
-        // std::cout <<  "tick_size = " << tick_size << std::endl;
         double new_price = price + (ticks * tick_size);
-        // std::cout <<  "new_price = " << new_price << std::endl;
 
         if (side == Side::Sell)
             return std::ceil(new_price / tick_size) * tick_size;

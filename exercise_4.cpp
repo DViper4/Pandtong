@@ -15,9 +15,6 @@ class MyHashMap{
 
 class MyIntHashFunction {
     public:
-     
-        // Use sum of lengths of first and last names
-        // as hash function.
         size_t operator()(int i) const
         {
             return i % 10;
@@ -26,9 +23,6 @@ class MyIntHashFunction {
 
 class MyStringHashFunction {
     public:
-     
-        // Use sum of lengths of first and last names
-        // as hash function.
         size_t operator()(const std::string& str) const
         {
             if (str == "")
@@ -48,8 +42,6 @@ int main()
 
     // Add one case to demonstrate hash collision
     intHash[13] = 100; // key=13 collides with key=3 as for both the custom hash returns 3 (mod 10).
-    std::cout << intHash[1] << " " << intHash[2] << " " << intHash[3] << std::endl;
-
 
     strHash["abc"] = "cde";
     strHash["bcd"] = "fgh";
@@ -58,8 +50,6 @@ int main()
     // Add one case to demonstrate hash collision
     strHash["cxx"] = "some_string";   // collides with key=cde as 
                                       // for both the custom hash returns ('c' % 10) (mod 10). 
-    std::cout << strHash["abc"] << " " << strHash["cde"] << " " << strHash["cde"] << std::endl;
-
 
     return 0;
 }
