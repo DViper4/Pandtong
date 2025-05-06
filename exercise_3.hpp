@@ -93,7 +93,7 @@ int main()
         int averagePrice;
         int tradeVolume = ex.queryOrderTrade(orderId, averagePrice);
         std::cout << "orderId: " << orderId << " tradeVolume: " <<
-        tradeVolume << "averagePrice: " << averagePrice << std::endl;
+        tradeVolume << " averagePrice: " << averagePrice << std::endl;
     }
 
     return 0;
